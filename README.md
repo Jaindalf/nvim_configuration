@@ -12,7 +12,7 @@ This configuration uses **vim-plug** as its plugin manager. If you don't already
 2. lualine
 3. barbar
 4. nvim-treesitter
-5. nvim-lspconfig
+5. nvim-lspconfig *(requires gopls as the lsp is only configured for golang. Refer to nvim-lspconfig guide to configure for  other languages of  your choice.)*
 6. telescope.nvim *(requires `fzf` to be installed on your system)*
 7. git-blame
 8. nvim-cmp (autocomplete)
@@ -48,3 +48,4 @@ To view all configured keybindings, run:
 * Git
 * vim-plug
 * `fzf` (required for Telescope's live grep and improved fuzzy finding)
+* golang and gopls (not a strict requirement as lsp_config.lua can be modified  to use lsp of any language)
