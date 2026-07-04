@@ -44,7 +44,28 @@ nvim_lsp.gopls.setup ({
 	  },
   }
 })
- 
+
+-- C/C++
+nvim_lsp.clangd.setup({
+  on_attach = on_attach,
+  flags = {
+    debounce_text_changes = 150,
+  },
+  cmd = {
+    "clangd",
+    "--background-index",
+    "--clang-tidy",
+    "--completion-style=detailed",
+    "--header-insertion=iwyu",
+  },
+})
+--Python(basedpyright using uv)
+nvim_lsp.basedpyright.setup({
+    cmd = { "basedpyright-langserver", "--stdio" },
+    on_attach = on_attach,
+})
+
+
 vim.lsp.handlers["textDocument/publishDiagnostics"] = vim.lsp.with(
 	vim.lsp.diagnostic.on_publish_diagnostics, {
 		virtual_text = false
